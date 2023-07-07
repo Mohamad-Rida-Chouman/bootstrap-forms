@@ -9,9 +9,27 @@
     background: linear-gradient(to right, white, gold);
   }
 
+  .navbar {
+    position:relative;
+  }
+
   .navbar-brand{
     color: black;
   }
+
+  .navbar-brand:hover{
+    color: black;
+  }
+
+  .hover-info{
+    position: absolute;
+    display:none;
+    color: black;
+  }
+
+    .navbar-brand:hover > .hover-info {
+        display:grid;
+    }
 
   body {
     background-image: url(../assets/erik-mclean-czMeCTUJe58-unsplash.jpg);
