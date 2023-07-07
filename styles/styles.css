@@ -13,14 +13,10 @@
     color: black;
   }
 
-  /* body {
-    background: 
-      linear-gradient(#0007, #0000),
-      #123;
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
-  } */
+  body {
+    background-image: url(../assets/erik-mclean-czMeCTUJe58-unsplash.jpg);
+    background-size: cover;
+  }
   
   @keyframes firework {
     0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
