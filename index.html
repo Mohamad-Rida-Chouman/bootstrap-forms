@@ -1,5 +1,4 @@
-
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,13 +7,13 @@
         <meta name="description" content="Building a Register/Login page using Bootstrap.">
         <title>BootStrap Register/Login</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <link rel="stylesheet" href="./styles/styles.css">
+        <link rel="stylesheet" href="frontend/styles/styles.css">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark gradient-custom">
             <div class="container-fluid">
-                <img src="./assets/millennium_puzzle___render_by_alanmac95_daqj0nl-fullview.png" alt="millennium puzzle logo" width="50px" height="50px">
+                <img src="frontend/assets/millennium_puzzle___render_by_alanmac95_daqj0nl-fullview.png" alt="millennium puzzle logo" width="50px" height="50px">
                 <a class="navbar-brand">It's Time to Duel!
                     <div class="hover-info">
                         <div class="card w-200">
@@ -31,10 +30,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="btn btn-link text-decoration-none text-dark" href="#" role="button" data-bs-toggle="modal" data-bs-target="#modal-login">Login</a>
+                            <a class="btn btn-link text-decoration-none text-dark" href="frontend/signin.html" role="button" data-bs-toggle="modal" data-bs-target="#modal-login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-link text-decoration-none text-dark" role="button" href="#" data-bs-toggle="modal" data-bs-target="#modal-signup">Sign Up</a>
+                            <a class="btn btn-link text-decoration-none text-dark" role="button" href="frontend/signup.html" data-bs-toggle="modal" data-bs-target="#modal-signup">Sign Up</a>
                         </li>
                     </ul>
                 </div>
@@ -42,152 +41,7 @@
         </nav>
     </header>
 
-    <div class="modal fade" id="modal-login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="login">Welcome back!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form class="login-form" id="login-form" method="post">
-                        <div class="mb-3">
-                            <label for="login-email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="login-password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="login-password">
-                        </div>
-                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" >Sign in</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal-signup" tabindex="-1" aria-labelledby="signup" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signup">Welcome to the Gang!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form class="signup-form" id="signup-form" method="post">
-                        <div class="mb-3">
-                            <label for="firstName" class="form-label">First name</label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="lastName" class="form-label">Last name</label>
-                            <input type="text" class="form-control" id="lastName">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password">
-                        </div>
-                        <div class="mb-3">
-                            <label for="confirmPassword" class="form-label">Confirm Password</label>
-                            <input type="password" class="form-control" id="confirmPassword">
-                        </div>
-                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" data-bs-target="#firework" data-bs-toggle="collapse">Register</button>
-                        <div class="firework collapse" id="firework"></div>
-                        <div class="firework collapse" id="firework"></div>
-                        <div class="firework collapse" id="firework"></div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="scripts/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</body>
-</html> -->
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Mohamad Rida Chouman">
-    <meta name="description" content="Building a Register/Login page using Bootstrap.">
-    <title>BootStrap Register/Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/styles.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark gradient-custom">
-            <div class="container-fluid">
-                <img src="./assets/millennium_puzzle___render_by_alanmac95_daqj0nl-fullview.png" alt="millennium puzzle logo" width="50px" height="50px">
-                <a class="navbar-brand">It's Time to Duel!</a>
-            </div>
-        </nav>
-    </header>
-
-    <div id="login" class="container mt-5">
-        <h5 class="modal-title">Welcome back!</h5>
-        <form class="login-form" id="login-form">
-            <div class="mb-3">
-                <label for="login-email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-                <label for="login-password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="login-password">
-            </div>
-            <button type="button" class="btn btn-success">Sign in</button>
-        </form>
-    </div>
-
-    <div id="signup" class="container mt-5">
-        <h5 class="modal-title">Welcome to the Gang!</h5>
-        <form class="signup-form" id="signup-form">
-            <div class="mb-3">
-                <label for="firstName" class="form-label">First name</label>
-                <input type="text" class="form-control" id="firstName">
-            </div>
-            <div class="mb-3">
-                <label for="lastName" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="lastName">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password">
-            </div>
-            <div class="mb-3">
-                <label for="confirmPassword" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPassword">
-            </div>
-            <button type="submit" class="btn btn-success">Register</button>
-        </form>
-    </div>
-
-    <script src="scripts/script.js"></script>
+    <script src="frontend/scripts/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
