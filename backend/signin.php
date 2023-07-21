@@ -1,11 +1,8 @@
 <?php
 include('connection.php');
 
-// $username = $_POST['username'];
-// $password = $_POST['password'];
-
-$email = 'judai@gmail.com';
-$pass = 'ads';
+$email = $_POST['email'];
+$pass = $_POST['pass'];
 
 $query = $mysqli->prepare('select id,email,pass,firstname,lastname
 from users 
@@ -14,17 +11,18 @@ $query->bind_param('s', $email);
 $query->execute();
 
 $query->store_result();
-$query->bind_result($id, $email, $hashed_password, $first_name, $last_name);
+$query->bind_result($id, $firstname, $lastname, $email, $hashed_password);
 $query->fetch();
 
 $num_rows = $query->num_rows();
 if ($num_rows == 0) {
     $response['status'] = "user not found";
 } else {
-    if (password_verify($pass, $hashed_password)) {
+    // if (password_verify($pass, $hashed_password)) {
+    if ($pass == $hashed_password){
         $response['status'] = 'logged in';
         $response['user_id'] = $id;
-        $response['first_name'] = $first_name;
+        $response['first_name'] = $firstname;
         $response['email'] = $email;
     } else {
         $response['status'] = "wrong password";

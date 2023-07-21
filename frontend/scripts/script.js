@@ -1,5 +1,7 @@
 const pages = {}
 
+document.getElementById("form").addEventListener("submit", pages.getPost);
+
 pages.base_url = "http://localhost/bootstrap-forms/backend/";
 
 pages.print_message = (message) =>{
@@ -21,24 +23,25 @@ pages.getAPI = async (url) => {
     }
 }
 
-pages.page_signin = async () => {
-    const signin_url = pages.base_url + "signin.php";
-    const response = await pages.getAPI(signin_url);
-    // const name = response.data[1].name;
-}
-
-pages.page_signup = async () => {
-    const signup_url = pages.base_url + "signup.php";
-    const response = await pages.getAPI(signup_url);
-    // const name = response.data[1].name;
-}
-
-pages.loadFor = (page) => {
-    eval("pages.page_" + page + "();")
-}
-
-
-
-
-
-
+pages.getPost = async () => {
+    try {
+      const form = document.getElementById("form");
+      const formData = new FormData(form);
+    //   console.log(url);
+      const url = form.action;
+  
+      const response = await fetch(url, {
+        method: "POST",
+        body: formData,
+      });
+  
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+  
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      pages.print_message("Error from GET API: " + error);
+    }
+  };
