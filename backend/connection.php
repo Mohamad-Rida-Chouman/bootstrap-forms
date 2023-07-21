@@ -7,7 +7,7 @@ $db_name = "usersdb";
 
 $mysqli = new mysqli($host, $db_user, $db_pass, $db_name);
 if ($mysqli) {
-    echo ('connection succesful');
+    // echo ('connection succesful');
 } else {
     die ('a connection was unsuccessful');
 }

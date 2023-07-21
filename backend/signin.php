@@ -4,7 +4,7 @@ include('connection.php');
 $email = $_POST['email'];
 $pass = $_POST['pass'];
 
-$query = $mysqli->prepare('select id,email,pass,firstname,lastname
+$query = $mysqli->prepare('select id,firstname,lastname,email,pass
 from users 
 where email=?');
 $query->bind_param('s', $email);
@@ -28,4 +28,6 @@ if ($num_rows == 0) {
         $response['status'] = "wrong password";
     }
 }
-echo json_encode($response);
+$response =$firstname;
+header('Content-Type: application/json');
+echo $response;

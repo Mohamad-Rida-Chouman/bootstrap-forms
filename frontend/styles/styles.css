@@ -183,3 +183,6 @@ body {
   animation-delay: -0.4s;
 }
 
+.welcome-container {
+  background-color: gold !important;
+}

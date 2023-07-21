@@ -1,6 +1,9 @@
-const pages = {}
+// document.addEventListener("DOMContentLoaded", () => {
+    
+    
+// });
 
-document.getElementById("form").addEventListener("submit", pages.getPost);
+const pages = {};
 
 pages.base_url = "http://localhost/bootstrap-forms/backend/";
 
@@ -23,7 +26,8 @@ pages.getAPI = async (url) => {
     }
 }
 
-pages.getPost = async () => {
+pages.getPost = async (event) => {
+    event.preventDefault();
     try {
       const form = document.getElementById("form");
       const formData = new FormData(form);
@@ -34,14 +38,24 @@ pages.getPost = async () => {
         method: "POST",
         body: formData,
       });
-  
+      
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-  
-      const data = await response.json();
+      
+      const data = await response.text();
       console.log(data);
+
+      displayName(data)
+
     } catch (error) {
       pages.print_message("Error from GET API: " + error);
     }
   };
+
+  document.getElementById("form").addEventListener("submit", pages.getPost);
+
+  function displayName(name) {
+    window.location = "http://localhost/bootstrap-forms/frontend/dashboard.html?firstname=" + name;
+  
+}

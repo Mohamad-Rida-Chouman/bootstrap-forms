@@ -30,4 +30,6 @@ if ($email_exists == 0) {
     $response['status'] = "failed";
 }
 
-echo json_encode($response);
+$response =$firstname;
+header('Content-Type: application/json');
+echo $response;
